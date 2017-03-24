@@ -27,15 +27,15 @@ import routes from 'routes'
 // )(Counter)
 
 export default class App extends Component {
-  render () {
-    return (
-      <div className='App'>
-        {/* <Provider store={store}>
-          <CounterWithStore />
-        </Provider> */}
-        <Header />
-        <Router history={history} routes={routes} key={Math.random()} />
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div className='App'>
+                {/* <Provider store={store}>
+                <CounterWithStore />
+                </Provider> */}
+                <Header />
+                <Router history={history} routes={routes} key={Math.random()} />
+            </div>
+        )
+    }
 }

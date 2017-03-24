@@ -1,36 +1,44 @@
 body {
-  font-family: proxima-nova,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
-  background-color: #2d2d2d;
+    font-family: proxima-nova, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    background-color: #2d2d2d;
 }
+
 .App {
-  margin-top: 4%;
-  text-align: center;
+    margin-top: 4%;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 150px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 150px;
 }
 
 .App-header {
-  height: 150px;
-  padding: 20px;
-  color: white;
+    height: 150px;
+    padding: 20px;
+    color: white;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
+
 /**shake it off! shake it off!**/
+
 .shake-rotate {
     display: inline-block;
-    transform-origin: center center; }
+    transform-origin: center center;
+}
 
 .shake-freeze,
 .shake-constant.shake-constant--hover:hover,
@@ -39,7 +47,8 @@ body {
 }
 
 .shake-freeze:hover,
-.shake-trigger:hover .shake-freeze, .shake-rotate:hover,
+.shake-trigger:hover .shake-freeze,
+.shake-rotate:hover,
 .shake-trigger:hover .shake-rotate {
     animation-play-state: running;
 }
@@ -73,8 +82,8 @@ body {
         transform: translate(0, 0) rotate(1.5deg);
     }
     20% {
-      transform: translate(0, 0) rotate(7.5deg);
-  }
+        transform: translate(0, 0) rotate(7.5deg);
+    }
     22% {
         transform: translate(0, 0) rotate(-1.5deg);
     }
@@ -192,7 +201,8 @@ body {
     98% {
         transform: translate(0, 0) rotate(-1.5deg);
     }
-    0%, 100% {
+    0%,
+    100% {
         transform: translate(0, 0) rotate(0);
     }
 }
