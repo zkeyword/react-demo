@@ -1,19 +1,23 @@
-# xx
+# react手脚架
 
-> x
+> 相关技术栈
 
-## Usage
+- react
+- redux
+- stylus
+
+## 使用
 
 ```bash
-# install all this dependencies.
+# 依赖安装
 npm install
 
-# development, default port: 8080
+# 开发模式，默认端口：8080
 npm run dev
 
-# production
+# 打包
 npm run build
 
-# lint the files
+# eslint检测
 npm run lint
 ```
