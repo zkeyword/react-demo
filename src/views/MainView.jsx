@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import './MainView.css'
+import './MainView.styl'
 
 export default class FooView extends Component {
     constructor(props) {

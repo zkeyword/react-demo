@@ -11,12 +11,12 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const env = config.build.env;
 
 let webpackConfig = merge(baseWebpackConfig, {
-    module: {
-        rules: utils.styleLoaders({
-            sourceMap: config.build.productionSourceMap,
-            extract: true
-        })
-    },
+    // module: {
+    //     rules: utils.styleLoaders({
+    //         sourceMap: config.build.productionSourceMap,
+    //         extract: true
+    //     })
+    // },
     devtool: config.build.productionSourceMap ? '#source-map' : false,
     output: {
         path: config.build.assetsRoot,

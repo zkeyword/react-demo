@@ -64,21 +64,22 @@ module.exports = {
                     limit: 10000,
                     name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
                 }
-            }
-        ]
-    },
-    plugins: [ // https://github.com/webpack/webpack/issues/3018#issuecomment-248633498
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                postcss: [ // <---- postcss configs go here under LoadOptionsPlugin({ options: { ??? } })
-                    require('autoprefixer')({
-                        browsers: [
-                            'last 3 version',
-                            'ie >= 10',
-                        ],
-                    })
+            },
+            {
+                test: /\.styl$/,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: _ => [require('autoprefixer')({ browsers: ['last 20 versions'] })]
+                        }
+                    },
+                    'stylus-loader'
                 ]
             }
-        })
-    ]
+        ]
+    }
 };
