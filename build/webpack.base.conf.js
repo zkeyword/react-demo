@@ -1,8 +1,9 @@
+const webpack = require('webpack');
 const path = require('path');
 const utils = require('./utils');
 const config = require('../config');
 
-function resolve (dir) {
+function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
 
@@ -65,5 +66,19 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [ // https://github.com/webpack/webpack/issues/3018#issuecomment-248633498
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: [ // <---- postcss configs go here under LoadOptionsPlugin({ options: { ??? } })
+                    require('autoprefixer')({
+                        browsers: [
+                            'last 3 version',
+                            'ie >= 10',
+                        ],
+                    })
+                ]
+            }
+        })
+    ]
 };

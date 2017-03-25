@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/header'
-import './App.css'
+import './App.styl'
 
 import { browserHistory as history, Router } from 'react-router'
 import routes from 'routes'

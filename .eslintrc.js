@@ -35,7 +35,7 @@ module.exports = {
         // allow async-await
         'generator-star-spacing': 0,
         // allow debugger during development
-        'no-debugger': process.env.NODE_ENV === 'production' ? 4 : 0,
+        'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
         'react/jsx-indent': ["error", 4],
         'react/jsx-indent-props': ["error", 4]
     }
