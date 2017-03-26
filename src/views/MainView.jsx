@@ -21,7 +21,7 @@ export default class FooView extends Component {
                     <Link to='/bar' className='btn' activeClassName='active'>To Bar</Link>
                 </div>
                 <div className='view'>
-                    {this.props.children}
+                    asdf{this.props.children}dfad
                 </div>
                 <input type='text' defaultValue={this.state.val} onChange={this.inputChange} />{this.state.val}
             </div>
