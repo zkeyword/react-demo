@@ -5,6 +5,6 @@
 export const rootPath = 'http://localhost:8989'
 
 export const errHandler = (e) => {
-    alert('[ XHR:Failed ] 详情请看控制台')
+    console.log('[ XHR:Failed ] 详情请看控制台')
     console.error(e)
 }

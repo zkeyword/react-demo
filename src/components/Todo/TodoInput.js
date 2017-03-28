@@ -12,7 +12,7 @@ export default class TodoInput extends Component {
         let content = this.state.inputVal.trim()
         if (!content) return
 
-        // this.props.addTodo(content)
+        this.props.addTodo(content)
         this.setState({ inputVal: '' }) // 清空输入框
     }
 

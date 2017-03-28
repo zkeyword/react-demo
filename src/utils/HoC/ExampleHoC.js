@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 
 /* 高阶组件 High Order Component 例子 */
 const ExampleHoC = WrappedComponent => class extends Component {
-    componentWillMount() {
-        console.info('[HoC] componentWillMount')
-    }
+  componentWillMount() {
+    console.info('[HoC] componentWillMount')
+  }
 
-    componentDidMount() {
-        console.info('[HoC] componentDidMount')
-    }
+  componentDidMount() {
+    console.info('[HoC] componentDidMount')
+  }
 
-    render() {
-        return <WrappedComponent {...this.props} />
-    }
+  render () {
+    return <WrappedComponent {...this.props} />
+  }
 }
 
 export default ExampleHoC
