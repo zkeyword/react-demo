@@ -1,19 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
-import { AppContainer } from 'react-hot-loader'
+import { Provider } from 'react-redux'
+import { Router } from 'react-router'
+import store, { history } from 'STORE'
+import routes from 'ROUTE'
 
-const render = Component => {
-    ReactDOM.render(
-        <AppContainer>
-            <Component />
-        </AppContainer>,
-        document.getElementById('root')
-    )
-}
-
-render(App)
-
-if (module.hot) {
-    module.hot.accept('./App', () => render(App))
-}
+ReactDOM.render(
+    <Provider store={store}>
+        <Router history={history} children={routes} />
+    </Provider>,
+    document.getElementById('root')
+)

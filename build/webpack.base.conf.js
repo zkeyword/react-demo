@@ -25,12 +25,17 @@ module.exports = {
             resolve('node_modules')
         ],
         alias: {
-            'src': resolve('src'),
-            'assets': resolve('src/assets'),
-            'components': resolve('src/components'),
-            'routes': resolve('src/routes'),
-            'views': resolve('src/views'),
-            '$redux': resolve('src/redux')
+            ASSET: resolve('src/assets'),
+            COMPONENT: resolve('src/components'),
+            ACTION: resolve('src/redux/actions'),
+            REDUCER: resolve('src/redux/reducers'),
+            STORE: resolve('src/redux/store'),
+            ROUTE: resolve('src/routes'),
+            SERVICE: resolve('src/services'),
+            UTIL: resolve('src/utils'),
+            HOC: resolve('src/utils/HoC'),
+            MIXIN: resolve('src/utils/mixins'),
+            VIEW: resolve('src/views')
         }
     },
     module: {

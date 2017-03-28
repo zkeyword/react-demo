@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import Header from './components/header'
 import './App.styl'
 
-import { browserHistory as history, Router } from 'react-router'
+// import { browserHistory as history, Router } from 'react-router'
+import { hashHistory as history, Router } from 'react-router'
 import routes from 'routes'
 
 import { bindActionCreators } from 'redux'

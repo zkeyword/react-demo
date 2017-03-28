@@ -7,6 +7,7 @@ export default [
         path: '/',
         component: MainView,
         childRoutes: [
+            require('./todo').default,
             {
                 path: 'foo',
                 component: FooView
