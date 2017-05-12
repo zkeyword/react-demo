@@ -12,6 +12,7 @@ export default class Todo extends Component {
         let { todos, addTodo, toggleTodo } = this.props
         return (
             <div>
+                <TodoInput addTodo={addTodo} />
                 <ul>
                     {todos.map(todo =>
                         <li key={todo.id} onClick={() => toggleTodo(todo.id)}>
@@ -22,7 +23,7 @@ export default class Todo extends Component {
                                 style={{ textDecoration: 'none' }}
                                 className='pull-right'
                                 onClick={() => this.delTodo(todo.id)}>
-                                &otimes;
+                                删除
                             </a>
                             <span className='label label-default pull-right'>
                                 {dateTimeFormatter(todo.createdAt)}
@@ -30,7 +31,6 @@ export default class Todo extends Component {
                         </li>
                     )}
                 </ul>
-                <TodoInput addTodo={addTodo} />
             </div>
         )
     }

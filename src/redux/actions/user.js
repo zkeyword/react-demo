@@ -18,7 +18,7 @@ const login = (formData) => {
         userService
             .login(formData)
             .then(
-            re => dispatch(loginDone(re))
+                re => dispatch(loginDone(re))
             )
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from 'COMPONENT/Navbar/'
+import Navbar from 'COMPONENT/Navbar'
 
 const App = ({ children, location }) => (
     <div>
