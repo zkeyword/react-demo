@@ -1,2 +1,0 @@
-import { INCREASE } from '../types'
-
