@@ -1,18 +1,69 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { Router } from 'react-router'
-import store, { history } from 'STORE'
-import routes from 'ROUTE'
+import createStore from './store/createStore'
+import AppContainer from './containers/AppContainer'
 
-if (__DEV__ && __WHY_DID_YOU_UPDATE__) {
-    const { whyDidYouUpdate } = require('why-did-you-update')
-    whyDidYouUpdate(React)
+// ========================================================
+// Store Instantiation
+// ========================================================
+const initialState = window.___INITIAL_STATE__
+const store = createStore(initialState)
+
+// ========================================================
+// Render Setup
+// ========================================================
+const MOUNT_NODE = document.getElementById('app')
+
+let render = () => {
+    const routes = require('./routes/index').default(store)
+
+    ReactDOM.render(
+        <AppContainer store={store} routes={routes} />,
+        MOUNT_NODE
+    )
 }
 
-ReactDOM.render(
-    <Provider store={store}>
-        <Router history={history} children={routes} />
-    </Provider>,
-    document.getElementById('app')
-)
+// // ========================================================
+// // Developer Tools Setup
+// // ========================================================
+// if (__DEV__) {
+//     if (window.devToolsExtension) {
+//         window.devToolsExtension.open()
+//     }
+// }
+
+// // This code is excluded from production bundle
+// if (__DEV__) {
+//     if (module.hot) {
+//         // Development render functions
+//         const renderApp = render
+//         const renderError = (error) => {
+//             const RedBox = require('redbox-react').default
+
+//             ReactDOM.render(<RedBox error={error} />, MOUNT_NODE)
+//         }
+
+//         // Wrap render in try/catch
+//         render = () => {
+//             try {
+//                 renderApp()
+//             } catch (error) {
+//                 console.error(error)
+//                 renderError(error)
+//             }
+//         }
+
+//         // Setup hot module replacement
+//         module.hot.accept('./routes/index', () =>
+//             setImmediate(() => {
+//                 ReactDOM.unmountComponentAtNode(MOUNT_NODE)
+//                 render()
+//             })
+//         )
+//     }
+// }
+
+// ========================================================
+// Go!
+// ========================================================
+render()

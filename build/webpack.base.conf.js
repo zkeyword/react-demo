@@ -71,7 +71,38 @@ module.exports = {
                 }
             },
             {
-                test: /\.(styl|css)$/,
+                test: /\.(css)?$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: _ => [
+                                require('autoprefixer')({ browsers: ['last 20 versions'] })
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(less)?$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: _ => [
+                                require('autoprefixer')({ browsers: ['last 20 versions'] })
+                            ]
+                        }
+                    },
+                    'less-loader'
+                ]
+            },
+            {
+                test: /\.(styl)$/,
                 exclude: /node_modules/,
                 use: [
                     'style-loader',

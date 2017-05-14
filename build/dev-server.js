@@ -29,7 +29,7 @@ const devMiddleware = require('webpack-dev-middleware')(compiler, {
 });
 
 const hotMiddleware = require('webpack-hot-middleware')(compiler, {
-    log: () => {}
+    log: () => { }
 });
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
@@ -76,6 +76,6 @@ module.exports = app.listen(port, function (err) {
 
     // when env is testing, don't need open it
     if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
-        opn(uri)
+        // opn(uri)
     };
 });

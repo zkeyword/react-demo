@@ -1,10 +1,11 @@
 import axios from 'axios'
-import { rootPath, errHandler } from './config'
+// import { errHandler } from './config'
 
 export default ({ url, body = null, method = 'get' }) => {
     return axios({
         method: method,
-        url: rootPath + url,
+        url: url,
         data: body
-    }).catch(errHandler)
+    })
+    // .catch(errHandler)
 }

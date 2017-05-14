@@ -1,23 +1,47 @@
-export default {
+// We only need to import the modules necessary for initial render
+import CoreLayout from '../layouts/CoreLayout'
+import Home from './Home'
+import {currencyList, currencyDetail} from './Base'
+// import CounterRoute from './Counter'
+// import ElapseRoute from './Elapse'
+// import RouteRoute from './Route'
+import PageNotFound from './PageNotFound'
+import Redirect from './PageNotFound/redirect'
+
+/*  Note: Instead of using JSX, we recommend using react-router
+    PlainRoute objects to build route definitions.   */
+
+export const createRoutes = (store) => ({
     path: '/',
-    component: require('../App').default,
-    indexRoute: {
-        component: require('VIEW/home').default
-    },
+    component: CoreLayout,
+    indexRoute: Home,
     childRoutes: [
-        // 路由按模块组织分离，避免单文件代码量过大
-        // require('./msg').default,
-        require('./todo').default,
-        require('./test').default,
-        require('./test2').default,
-        // 强制“刷新”页面的 hack
-        {
-            path: 'redirect',
-            component: require('VIEW/Redirect').default
-        },
-        {
-            path: '*',
-            component: require('VIEW/404').default
-        }
+        currencyList(store),
+        currencyDetail(store),
+        // CounterRoute(store),
+        // ElapseRoute(store),
+        // RouteRoute(store),
+        PageNotFound(),
+        Redirect
     ]
-}
+})
+
+/*  Note: childRoutes can be chunked or otherwise loaded programmatically
+    using getChildRoutes with the following signature:
+
+    getChildRoutes (location, cb) {
+      require.ensure([], (require) => {
+        cb(null, [
+          // Remove imports!
+          require('./Counter').default(store)
+        ])
+      })
+    }
+
+    However, this is not necessary for code-splitting! It simply provides
+    an API for async route definitions. Your code splitting should occur
+    inside the route `getComponent` function, since it is only invoked
+    when the route exists and matches.
+*/
+
+export default createRoutes
